@@ -94,14 +94,21 @@ h6 {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.9;
-  filter: alpha(opacity=90);
+  opacity: 0.95;
+  filter: alpha(opacity=95);
+
+
 }
 
 .masthead h1 {
-  font-size: 4rem;
+  font-size: 3.2rem;
   margin: 0;
   padding: 0;
+}
+
+.small {
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 @media (min-width: 992px) {
@@ -110,6 +117,11 @@ h6 {
   }
   .masthead h1 {
     font-size: 5.5rem;
+  }
+
+  .small {
+    font-size: 1.6rem;
+    font-weight: bold;
   }
 }
 
@@ -137,7 +149,8 @@ h6 {
   list-style: none;
 }
 
-.sidebar-nav li.sidebar-nav-item a {
+.sidebar-nav li.sidebar-nav-item
+ a {
   display: block;
   text-decoration: none;
   color: #fff;
