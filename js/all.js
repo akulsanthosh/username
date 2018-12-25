@@ -52,6 +52,7 @@ function getMobileOperatingSystem() {
         e[1].setAttribute("data-behaviour","link")
     }
 }
+getMobileOperatingSystem()
 // Disable Google Maps scrolling
 // Disable scroll zooming and bind back the click event
 var onMapMouseleaveHandler = function(event) {
