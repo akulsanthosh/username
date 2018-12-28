@@ -1,9 +1,6 @@
-/*!
- * Start Bootstrap - Grayscale v5.0.3 (https://startbootstrap.com/template-overviews/grayscale)
- * Copyright 2013-2018 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-grayscale/blob/master/LICENSE)
- */
-
+.map{
+  height: 500px
+}
 #mainNav {
   min-height: 56px;
   background-color: #fff;
@@ -235,13 +232,19 @@
 
 .contact-section .card {
   border: 0;
-  border-bottom: 0.25rem solid #64a19d;
+  background-color: #161616;
 }
 
 .contact-section .card h4 {
-  font-size: 0.8rem;
+  font-size: 1.5rem;
   font-family: 'Varela Round';
   text-transform: uppercase;
+  letter-spacing: 0.15rem;
+}
+
+.contact-section .card h5 {
+  font-size: 1rem;
+  font-family: 'Varela Round';
   letter-spacing: 0.15rem;
 }
 
