@@ -40,3 +40,14 @@
   $(window).scroll(navbarCollapse);
 
 })(jQuery); // End of use strict
+function getMobileOperatingSystem() {
+  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+  if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        var e  = document.getElementsByClassName('payment');
+        e[0].removeAttribute("data-behaviour")
+        e[0].setAttribute("data-behaviour","link")
+        e[1].removeAttribute("data-behaviour")
+        e[1].setAttribute("data-behaviour","link")
+    }
+}
+getMobileOperatingSystem()

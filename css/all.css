@@ -1,6 +1,10 @@
 .map{
   height: 500px
 }
+
+.sizing{
+  width: 40px;
+}
 #mainNav {
   min-height: 56px;
   background-color: #fff;
