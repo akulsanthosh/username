@@ -10,6 +10,7 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
+
 function SwapDivsWithClick(div1,div2)
 {
    d1 = document.getElementById(div1);
@@ -27,7 +28,6 @@ function SwapDivsWithClick(div1,div2)
 }
 
 
-
 function register(){
   var email = document.getElementById("email").value;
   var password = document.getElementById("password").value;
@@ -35,24 +35,26 @@ function register(){
   var college = document.getElementById("college").value;
   var phone = document.getElementById("phone").value;
 
-  firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-  var errorCode = error.code;
-  var errorMessage = error.message;
 
-  if (errorCode == 'auth/weak-password') {
-          alert('The password is too weak.');
-        } else {
-          alert(errorMessage);
-        }
-}else{
-  var userId = firebase.auth().currentUser.uid;
-  firebase.database().ref('users/' + userId).set({
+  firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    console.log(errorCode)
+  });
+
+  if(firebase.auth().currentUser){
+    var userId = firebase.auth().currentUser.uid;
+    database.ref('users/' + userId).set({
     name: name,
     email: email,
     college: college,
     phone: phone
   });
-});
+} else {
+  alert("registration failed try again")
+}
+
+}
 
 function login(){
   var email = document.getElementById("emailin").value;
@@ -63,7 +65,8 @@ function login(){
   var errorMessage = error.message;
 
 });
-}
+var userId = firebase.auth().currentUser.uid;
+console.log(userId)
 
 
 }
