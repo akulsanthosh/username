@@ -34,6 +34,7 @@ function register(){
   var name = document.getElementById("name").value;
   var college = document.getElementById("college").value;
   var phone = document.getElementById("phone").value;
+  var gender = document.getElementById("gender").value;
 
 
   firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
@@ -48,8 +49,11 @@ function register(){
     name: name,
     email: email,
     college: college,
-    phone: phone
+    phone: phone,
+    gender: gender
   });
+
+  alert("registration successfull")
 } else {
   alert("registration failed try again")
 }
@@ -65,8 +69,21 @@ function login(){
   var errorMessage = error.message;
 
 });
-var userId = firebase.auth().currentUser.uid;
-console.log(userId)
 
+}
 
+function forget(){
+    var email = document.getElementById("emailfor").value;
+    firebase.auth().sendPasswordResetEmail(email).then(function() {
+        alert('Password Reset Email Sent!');
+      }).catch(function(error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        if (errorCode == 'auth/invalid-email') {
+          alert(errorMessage);
+        } else if (errorCode == 'auth/user-not-found') {
+          alert(errorMessage);
+        }
+        console.log(error);
+      });
 }

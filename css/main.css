@@ -13,6 +13,22 @@
   display:none;
 }
 
+.forget {
+  display:none;
+}
+
+.selectbox{
+  font-family: Poppins-Medium;
+  color: #666666;
+  display: block;
+  width: 100%;
+  background: #e6e6e6;
+  height: 50px;
+  border-radius: 25px;
+
+}
+
+
 @font-face {
   font-family: Poppins-Regular;
   src: url('../fonts/poppins/Poppins-Regular.ttf');
