@@ -43,7 +43,7 @@ function register(){
     console.log(errorCode)
   });
 
-  firebase.auth().onAuthStateChanged(function() {
+  if(firebase.auth().currentUser){
     var userId = firebase.auth().currentUser.uid;
     database.ref('users/' + userId).set({
     name: name,
@@ -85,5 +85,6 @@ function forget(){
           alert(errorMessage);
         }
         console.log(error);
+
       });
 }
