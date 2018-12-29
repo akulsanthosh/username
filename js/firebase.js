@@ -64,7 +64,9 @@ function register() {
 function login() {
     var email = document.getElementById("emailin").value;
     var password = document.getElementById("passwordin").value;
-    firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+    firebase.auth().signInWithEmailAndPassword(email, password).then(function(){
+      alert("succesfully logged in")
+    })catch(function (error) {
 
         var errorCode = error.code;
         var errorMessage = error.message;
