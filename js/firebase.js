@@ -66,7 +66,7 @@ function login() {
     var password = document.getElementById("passwordin").value;
     firebase.auth().signInWithEmailAndPassword(email, password).then(function(){
       alert("succesfully logged in")
-    })catch(function (error) {
+    }).catch(function (error) {
 
         var errorCode = error.code;
         var errorMessage = error.message;
